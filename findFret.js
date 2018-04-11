@@ -1,6 +1,6 @@
 function findFretsInScale(scale, tuning) {
   var all = {};
-  scale.map((e,i) => all[e] = findFretsInStandardTuning(e, tuning));
+  scale.map((e,i) => all[e] = findFrets(e, tuning));
   return all;
 }
 
