@@ -1,5 +1,11 @@
-function findFretsInStandardTuning(note) {
-	var frets = {}, tuning = ['e', 'a', 'd', 'g', 'b', 'e'];
+function findFretsInScale(scale, tuning) {
+  var all = {};
+  scale.map((e,i) => all[e] = findFretsInStandardTuning(e, tuning));
+  return all;
+}
+
+function findFrets(note, tuning) {
+	var frets = {}, tuning = tuning || ['e', 'a', 'd', 'g', 'b', 'e'];
 	tuning.map(e => frets[e] = findFret(e, note))
 	return frets;
 }
